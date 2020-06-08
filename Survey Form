@@ -1,0 +1,197 @@
+<!--Survey Form-FreeCodeCamp Responsive Web Design Projects 2-->
+<!DOCTYPE html>
+<html>
+<head>
+  <link href='http://fonts.googleapis.com/css?family=Open+Sans+Condensed:300' rel='stylesheet' type='text/css'>
+  <style media="screen">
+    body{
+      background-image: url(https://images.pexels.com/photos/1939485/pexels-photo-1939485.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=650&w=940);
+    }
+
+    #title{
+      text-align: center;
+      text-shadow: 1px;
+      color: #C0C0C0;
+      font-size: 36px;
+    }
+    #description{
+      font-size: 20px;
+      font-family: verdana;
+      text-align: center;
+    }
+    .heading{
+      background: #4D4D4D;
+    	text-transform: uppercase;
+    	font-family: 'Open Sans Condensed', sans-serif;
+    	color: #797979;
+    	font-size: 18px;
+    	font-weight: 100;
+    	padding: 20px;
+    	margin: -30px -30px 30px -30px;
+    }
+    #survey-form{
+      background: #C0C0C0;;
+      padding: 30px;
+    	margin: 50px auto;
+    	box-shadow: 1px 1px 25px rgba(0, 0, 0, 0.35);
+    	border-radius: 20px;
+    	border: 6px solid #305A72;
+      max-width: 800px;
+
+    }
+    #name  #email #number #dropdown{
+      box-sizing: border-box;
+    	-webkit-box-sizing: border-box;
+    	-moz-box-sizing: border-box;
+    	outline: none;
+    	display: block;
+    	width: 100%;
+    	padding: 7px;
+    	border: none;
+    	border-bottom: 1px solid #ddd;
+    	background: transparent;
+    	margin-bottom: 10px;
+    	font: 16px Arial, Helvetica, sans-serif;
+    	height: 45px;
+    }
+    #name-label, #email-label, #number-label{
+    	font-family: 'Open Sans Condensed', sans-serif;
+      font-size: 20px;
+      text-transform: uppercase;
+      font-weight: 1000;
+    }
+    #check {
+      position: absolute;
+      top: 0;
+      left: 0;
+      height: 25px;
+      width: 25px;
+      background-color: #eee;
+    }
+    #cont{
+    -webkit-box-sizing: border-box;
+    width: 100%;
+  	display: block;
+    padding: 1px;
+    border: none;
+    background: transparent;
+    font: 16px Arial, Helvetica, sans-serif;
+    height: 30px;
+  }
+  #contl{
+    -webkit-box-sizing: border-box;
+    width: 100%;
+    display: block;
+    padding: 1px;
+    border: none;
+  	border-bottom: 1px solid #ddd;
+    background: transparent;
+    font: 16px Arial, Helvetica, sans-serif;
+    height: 30px;
+  }
+  #text{
+    -webkit-box-sizing: border-box;
+    width: 100%;
+    display: block;
+    padding: 10px;
+    border: none;
+  	border-bottom: 1px solid #ddd;
+    background: #DCDCDC;
+    font: 16px Arial, Helvetica, sans-serif;
+    height: 160px;
+  }
+  #submit{
+    -webkit-box-sizing: border-box;
+    padding:5px;
+    background-color: #2A9DF4;
+    border-radius: 10px;
+    border: 1px solid #1C4966;
+  	box-shadow: 1px 1px 25px rgba(0, 0, 0, 0.35);
+    width: 100px;
+    height: 35px;
+    margin: auto;
+    font: 16px Arial, Helvetica, sans-serif;
+    align-self: center;
+    position: relative;
+    top: 15px;
+
+  }
+
+  button:hover {
+    animation-name: width;
+    animation-duration: 500ms;
+    animation-fill-mode: forwards;
+  }
+
+  @keyframes width {
+    100% {
+      width: 110px;
+      height:38px;
+      background-color: #4791d0;
+    }
+  }
+
+  </style>
+</head>
+<title>Survey Form</title>
+<body>
+  <h1 id="title" class="heading">Contact Us-Codcaine</h1>
+  <p id="description" class="heading">Thanks for Visiting us. We'd like to know a little bit about you and your views.</p>
+<form id="survey-form">
+  <label for="name" id="name-label">Name:</label><br>
+  <input type="text" id="name" name="name" placeholder="Enter your Name here" required><br>
+  <label for="email" id="email-label">E-mail:</label><br>
+  <input type="email" id="email" name="email" placeholder="Enter your Email" required><br>
+  <label for="field" id="name-label">Which of the following field best describes your interest:</label><br>
+  <select name="field" id="dropdown">
+    <option>Select Your Field</option>
+    <option value="Web Development">Web Development</option>
+    <option value="Software Development">Software Development</option>
+    <option value="Blogging">Blogging</option>
+    <option value="Youtube">Youtube</option>
+    <option value="Gaming">Gaming, and I don't know what I am doing here</option>
+    <option value="Others">Others</option>
+  </select><br>
+  <label for="number" id="number-label">Years of Experience in the field:</label><br>
+  <input type="number" id="number" name="number" min="0" max="75" placeholder="Years"><br>
+  <p id="name-label">What would you like to see more on this page?</p><br>
+  <label for="Twitter Handles" id="cont">
+    <input type="checkbox" id="name-label" name="more" value="Twitter Handles">Twitter Handles to Follow</input>
+    <span id="check"></span>
+  </label>
+  <label for="Blogs" id="cont">
+    <input type="checkbox" id="name-label" name="more" value="Blogs">Blogs</input>
+    <span id="check"></span>
+  </label>
+  <label for="Tutorials" id="cont">
+    <input type="checkbox" id="name-label" name="more" value="Tutorials">Tutorials</input>
+    <span id="check"></span>
+  </label>
+  <label for="Coding Games" id="cont">
+    <input type="checkbox" id="name-label" name="more" value="Coding Games">Coding Games</input>
+    <span id="check"></span>
+  </label>
+  <label for="Nothing" id="contl">
+    <input type="checkbox" id="name-label" name="more" value="Nothing">Nothing, I am satisfied with everything here</input>
+    <span id="check"></span>
+  </label>
+  <p id="name-label">Did you liked the content on this page?</p>
+  <label for="Yes" id="cont">
+    <input type="radio" id="name-label" name="like" value="Yes" checked>Hell Yeah, I loved it</input>
+  </label>
+  <label for="Maybe" id="cont">
+    <input type="radio" id="name-label" name="like" value="Maybe">Could be Improved</input>
+  </label>
+  <label for="No" id="contl">
+    <input type="radio" id="name-label" name="like" value="No">This page wanna makes me smash my Monitor</input>
+    <span id="check"></span>
+  </label>
+  <p id="name-label">Suggestions:</p>
+  <label for "Suggestions">
+    <textarea id="text" name="Suggestions" rows="10" cols="50" placeholder="Your Suggestions on this page"></textarea>
+  </label>
+  <button type="submit" id="submit">Submit</button>
+
+</form>
+</body>
+</html>
