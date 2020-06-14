@@ -1,0 +1,129 @@
+  <style media="screen">
+    body{
+      background-image: url(https://images.pexels.com/photos/1939485/pexels-photo-1939485.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=650&w=940);
+    }
+
+    #title{
+      text-align: center;
+      text-shadow: 1px;
+      color: #C0C0C0;
+      font-size: 36px;
+    }
+    #description{
+      font-size: 20px;
+      font-family: verdana;
+      text-align: center;
+    }
+    .heading{
+      background: #4D4D4D;
+    	text-transform: uppercase;
+    	font-family: 'Open Sans Condensed', sans-serif;
+    	color: #797979;
+    	font-size: 18px;
+    	font-weight: 100;
+    	padding: 20px;
+    	margin: -30px -30px 30px -30px;
+    }
+    #survey-form{
+      background: #C0C0C0;;
+      padding: 30px;
+    	margin: 50px auto;
+    	box-shadow: 1px 1px 25px rgba(0, 0, 0, 0.35);
+    	border-radius: 20px;
+    	border: 6px solid #305A72;
+      max-width: 800px;
+
+    }
+    #name  #email #number #dropdown{
+      box-sizing: border-box;
+    	-webkit-box-sizing: border-box;
+    	-moz-box-sizing: border-box;
+    	outline: none;
+    	display: block;
+    	width: 100%;
+    	padding: 7px;
+    	border: none;
+    	border-bottom: 1px solid #ddd;
+    	background: transparent;
+    	margin-bottom: 10px;
+    	font: 16px Arial, Helvetica, sans-serif;
+    	height: 45px;
+    }
+    #name-label, #email-label, #number-label{
+    	font-family: 'Open Sans Condensed', sans-serif;
+      font-size: 20px;
+      text-transform: uppercase;
+      font-weight: 1000;
+    }
+    #check {
+      position: absolute;
+      top: 0;
+      left: 0;
+      height: 25px;
+      width: 25px;
+      background-color: #eee;
+    }
+    #cont{
+    -webkit-box-sizing: border-box;
+    width: 100%;
+  	display: block;
+    padding: 1px;
+    border: none;
+    background: transparent;
+    font: 16px Arial, Helvetica, sans-serif;
+    height: 30px;
+  }
+  #contl{
+    -webkit-box-sizing: border-box;
+    width: 100%;
+    display: block;
+    padding: 1px;
+    border: none;
+  	border-bottom: 1px solid #ddd;
+    background: transparent;
+    font: 16px Arial, Helvetica, sans-serif;
+    height: 30px;
+  }
+  #text{
+    -webkit-box-sizing: border-box;
+    width: 100%;
+    display: block;
+    padding: 10px;
+    border: none;
+  	border-bottom: 1px solid #ddd;
+    background: #DCDCDC;
+    font: 16px Arial, Helvetica, sans-serif;
+    height: 160px;
+  }
+  #submit{
+    -webkit-box-sizing: border-box;
+    padding:5px;
+    background-color: #2A9DF4;
+    border-radius: 10px;
+    border: 1px solid #1C4966;
+  	box-shadow: 1px 1px 25px rgba(0, 0, 0, 0.35);
+    width: 100px;
+    height: 35px;
+    margin: auto;
+    font: 16px Arial, Helvetica, sans-serif;
+    align-self: center;
+    position: relative;
+    top: 15px;
+
+  }
+
+  button:hover {
+    animation-name: width;
+    animation-duration: 500ms;
+    animation-fill-mode: forwards;
+  }
+
+  @keyframes width {
+    100% {
+      width: 110px;
+      height:38px;
+      background-color: #4791d0;
+    }
+  }
+
+  </style>
