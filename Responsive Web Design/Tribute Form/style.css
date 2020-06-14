@@ -1,0 +1,43 @@
+ <style>
+
+  #main{
+    align-self: center;
+    background-color: #D3D3D3;
+  }
+
+  #title{
+    text-align: center;
+  }
+
+  #img-div{
+    padding: 10px 20px 10px 20px;
+    background-color: #909090;
+  }
+
+  #image{
+    max-width: 50%;
+    height:auto;
+    display: block;
+    margin-left: auto;
+    margin-right: auto;
+  }
+
+  #img-caption{
+    font-size: 10px;
+    font-family: sans-serif;
+  }
+
+  #tribute-info{
+    font-size: 20px;
+    font-family: monospace;
+  }
+
+  #tribute-link{
+    text-decoration: underline;
+  }
+  
+  a:hover{
+    color: red;
+  }
+
+  </style>
