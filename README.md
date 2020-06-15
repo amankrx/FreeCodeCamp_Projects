@@ -1,4 +1,4 @@
-# FreeCodeCamp_Projects
+# FreeCodeCamp Projects
 This repository contains all the [Freecodecamp projects](https://www.freecodecamp.org/learn/).
 
 1. I will be providing a link to codepen in the README section of each projects.
