@@ -1,0 +1,242 @@
+<head>
+  <link href='http://fonts.googleapis.com/css?family=Open+Sans+Condensed:300' rel='stylesheet' type='text/css'>
+  <link href="main.css" rel='stylesheet' type='text/css'>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Git Basics</title>
+  </head>
+<body>
+  <header class="heading">Git Quick Referance</header>
+  <nav id="navbar">
+    <header style="text-align: center">Git Basics</header>
+    <ul>
+      <li><a class="nav-link" href="#introduction">Introduction</a></li>
+      <li><a class="nav-link" href="#set_up_and_initialization">Set Up and Initialization</a></li>
+      <li><a class="nav-link" href="#staging">Staging</a></li>
+      <li><a class="nav-link" href="#committing">Committing</a></li>
+      <li><a class="nav-link" href="#branches">Branches</a></li>
+      <li><a class="nav-link" href="#collaborate_and_update">Collaborate and Update</a></li>
+      <li><a class="nav-link" href="#inspecting">Inspecting</a></li>
+      <li><a class="nav-link" href="#show_changes">Show Changes</a></li>
+      <li><a class="nav-link" href="#stashing">Stashing</a></li>
+      <li><a class="nav-link" href="#ignoring_files">Ignoring Files</a></li>
+      <li><a class="nav-link" href="#rebasing">Rebasing</a></li>
+      <li><a class="nav-link" href="#resetting">Resetting</a></li>
+      <li><a class="nav-link" href="#conclusion">Conclusion</a></li>
+      <li><a class="nav-link" href="#referance">Referance</a></li>
+    </ul>
+  </nav>
+
+
+  <main id="main-doc">
+    <section class="main-section" id="introduction">
+      <header>Introduction</header>
+      <article>
+        <p>Teams of developers and open-source software maintainers typically manage their projects through Git, a distributed version control system that supports collaboration.</p>
+        <p>This cheat sheet-style guide provides a quick reference to commands that are useful for working and collaborating in a Git repository.</p>
+        <p style="font-weight: 600">How to Use This Guide:</p>
+        <ul>
+          <li>This guide is in cheat sheet format with self-contained command-line snippets.</li>
+          <li>Jump to any section that is relevant to the task you are trying to complete.</li>
+          <li>When you see <mark>highlighted text</mark> in this guide’s commands, keep in mind that this text should refer to the commits and files in your own repository.</li>
+        </ul>
+    </article>
+    </section>
+
+    <section class="main-section" id="set_up_and_initialization">
+      <header>Set Up and Initialization</header>
+      <article>
+        <p>Check your Git version with the following command, which will also confirm that Git is installed.</p>
+        <code>$ git --version</code>
+        <p>You can initialize your current working directory as a Git repository with <code>init</code>.</p>
+        <code>$ git init</code>
+        <p>To copy an existing Git repository hosted remotely, you’ll use <code>git clone</code> with the repo’s URL or server location (in the latter case you will use <code>ssh</code>).</p>
+        <code>$ git clone <mark>https://www.github.com/username/repo-name</mark></code>
+        <p>Show your current Git directory’s remote repository.</p>
+        <code>$ git remote</code>
+        <p>For a more verbose output, use the <code>-v</code> flag.</p>
+        <code>$ git remote -v</code>
+        <p>Add the Git upstream, which can be a URL or can be hosted on a server (in the latter case, connect with <code>ssh</code>).</p>
+        <code>$ git remote add upstream <mark>https://www.github.com/username/repo-name</mark></code>
+      </article>
+    </section>
+
+    <section class="main-section" id="staging">
+      <header>Staging</header>
+      <article>
+        <p>When you’ve modified a file and have marked it to go in your next commit, it is considered to be a staged file.</p>
+        <p>Check the status of your Git repository, including files added that are not staged, and files that are staged.</p>
+        <code>$ git status</code>
+        <p>To stage modified files, use the <code>add</code> command, which you can run multiple times before a commit. If you make subsequent changes that you want included in the next commit, you must run <code>add</code> again.</p>
+        <p>You can specify the specific file with <code>add</code>.</p>
+        <code>$ git add <mark>my_script.py</mark></code>
+        <p>With <code>.</code> you can add all files in the current directory including files that begin with a <code>.</code>.</p>
+        <code>$ git add .</code>
+        <p>You can remove a file from staging while retaining changes within your working directory with <code>reset</code>.</p>
+        <code>$ git reset <mark>my_script.py</mark></code>
+      </article>
+    </section>
+
+    <section class="main-section" id="committing">
+      <header>Committing</header>
+      <article>
+        <p>Once you have staged your updates, you are ready to commit them, which will record changes you have made to the repository.</p>
+        <p>To commit staged files, you’ll run the <code>commit</code> command with your meaningful commit message so that you can track commits.</p>
+        <code>$ git commit -m "Commit message"</code>
+        <p>You can condense staging all tracked files with committing them in one step.</p>
+        <code>$ git commit -am "Commit message"</code>
+        <p>If you need to modify your commit message, you can do so with the <code>--amend</code> flag</p>
+        <code>$ git commit --amend -m "New commit message"</code>
+      </article>
+    </section>
+
+    <section class="main-section" id="branches">
+      <header>Branches</header>
+      <article>
+        <p>A branch in Git is a movable pointer to one of the commits in the repository, it allows you to isolate work and manage feature development and integrations.</p>
+        <p>List all current branches with the <code>branch</code> command. An asterisk (<code>*</code>) will appear next to your currently active branch.</p>
+        <code>$ git branch</code>
+        <p>Create a new branch. You will remain on your currently active branch until you switch to the new one.</p>
+        <code>$ git branch <mark>new-branch</mark></code>
+        <p>Switch to any existing branch and check it out into your current working directory.</p>
+        <code>$ git checkout <mark>another-branch</mark></code>
+        <p>You can consolidate the creation and checkout of a new branch by using the <code>-b</code> flag.</p>
+        <code>$ git checkout -b <mark>new-branch</mark></code>
+        <p>Rename your branch name.</p>
+        <code>$ git branch -m <mark>current-branch-name new-branch-name</mark></code>
+        <p>Merge the specified branch’s history into the one you’re currently working in.</p>
+        <code>$ git merge <mark>branch-name</mark></code>
+        <p>Abort the merge, in case there are conflicts.</p>
+        <code>$ git merge --abort</code>
+        <p>You can also select a particular commit to merge with <code>cherry-pick</code> with the string that references the specific commit.</p>
+        <code>$ git cherry-pick <mark>f7649d0</mark></code>
+        <p>When you have merged a branch and no longer need the branch, you can delete it.</p>
+        <code>$ git branch -d <mark>branch-name</mark></code>
+        <p>If you have not merged a branch to master, but are sure you want to delete it, you can force delete a branch.</p>
+        <code>$ git branch -D <mark>branch-name</mark></code>
+      </article>
+    </section>
+
+    <section class="main-section" id="collaborate_and_update">
+      <header>Collaborate and Update</header>
+      <article>
+        <p>To download changes from another repository, such as the remote upstream, you’ll use <code>fetch</code>.</p>
+        <code>$ git fetch <mark>upstream</mark></code>
+        <p>Merge the fetched commits.</p>
+        <code>$ git merge upstream/master</code>
+        <p>Push or transmit your local branch commits to the remote repository branch.</p>
+        <code>$ git push origin master</code>
+        <p>Fetch and merge any commits from the tracking remote branch.</p>
+        <code>$ git pull</code>
+      </article>
+    </section>
+
+    <section class="main-section" id="inspecting">
+      <header>Inspecting</header>
+      <article>
+        <p>Display the commit history for the currently active branch.</p>
+        <code>$ git log</code>
+        <p>Show the commits that changed a particular file. This follows the file regardless of file renaming.</p>
+        <code>$ git log --follow <mark>my_script.py</mark></code>
+        <p>Show the commits that are on one branch and not on the other. This will show commits on <mark>a-branch</mark> that are not on <mark>b-branch</mark>.</p>
+        <code>$ git log <mark>a-branch</mark>..<mark>b-branch</mark></code>
+        <p>Look at reference logs (<code>reflog</code>) to see when the tips of branches and other references were last updated within the repository.</p>
+        <code>$ git reflog</code>
+        <p>Show any object in Git via its commit string or hash in a more human-readable format.</p>
+        <code>$ git show <mark>de754f5</mark></code>
+      </article>
+    </section>
+
+    <section class="main-section" id="show_changes">
+      <header>Show Changes</header>
+      <article>
+        <p>The git <code>diff</code> command shows changes between commits, branches, and more.</p>
+        <p>Compare modified files that are on the staging area.</p>
+        <code>$ git diff --staged</code>
+        <p>Display the diff of what is in <mark>a-branch</mark> but is not in <mark>b-branch</mark>.</p>
+        <code>$ git diff <mark>a-branch</mark>..<mark>b-branch</mark></code>
+        <p>Show the diff between two specific commits.</p>
+        <code>$ git diff <mark>61ce3e6</mark>..<mark>e221d9c</mark></code>
+      </article>
+    </section>
+
+    <section class="main-section" id="stashing">
+      <header>Stashing</header>
+      <article>
+        <p>Sometimes you’ll find that you made changes to some code, but before you finish you have to begin working on something else. You’re not quite ready to commit the changes you have made so far, but you don’t want to lose your work. The <code>git stash</code> command will allow you to save your local modifications and revert back to the working directory that is in line with the most recent <code>HEAD</code> commit.</p>
+        <p>Stash your current work.</p>
+        <code>$ git stash</code>
+        <p>See what you currently have stashed.</p>
+        <code>$ git stash list</code>
+        <p>Your stashes will be named <code>stash@{0}</code>, <code>stash@{1}</code>, and so on.</p>
+        <p>Show information about a particular stash.</p>
+        <code>$ git stash show stash@{<mark>0</mark>}</code>
+        <p>To bring the files in a current stash out of the stash while still retaining the stash, use <code>apply</code>.</p>
+        <code>$ git stash apply stash@{<mark>0</mark>}</code>
+        <p>If you want to bring files out of a stash, and no longer need the stash, use <code>pop</code>.</p>
+        <code>$ git stash pop stash@{<mark>0</mark>}</code>
+        <p>If you no longer need the files saved in a particular stash, you can <code>drop</code> the stash.</p>
+        <code>$ git stash drop stash@{<mark>0</mark>}</code>
+        <p>If you have multiple stashes saved and no longer need to use any of them, you can use <code>clear</code> to remove them.</p>
+        <code>$ git stash clear</code>
+      </article>
+    </section>
+
+    <section class="main-section" id="ignoring_files">
+      <header>Ignoring Files</header>
+      <article>
+        <p>If you want to keep files in your local Git directory, but do not want to commit them to the project, you can add these files to your <code>.gitignore</code> file so that they do not cause conflicts.</p>
+        <p>Use a text editor such as nano to add files to the <code>.gitignore</code> file.</p>
+        <code>$ nano .gitignore</code>
+      </article>
+    </section>
+
+    <section class="main-section" id="rebasing">
+      <header>Rebasing</header>
+      <article>
+        <p>A rebase allows us to move branches around by changing the commit that they are based on. With rebasing, you can squash or reword commits.</p>
+        <p>You can start a rebase by either calling the number of commits you have made that you want to rebase (<code>5</code> in the case below).</p>
+        <code>$ git rebase -i HEAD~<mark>5</mark></code>
+        <p>Alternatively, you can rebase based on a particular commit string or hash.</p>
+        <code>$ git rebase -i <mark>074a4e5</mark></code>
+        <p>Once you have squashed or reworded commits, you can complete the rebase of your branch on top of the latest version of the project’s upstream code.</p>
+        <code>$ git rebase <mark>upstream/master</mark></code>
+      </article>
+    </section>
+
+    <section class="main-section" id="resetting">
+      <header>Resetting</header>
+      <article>
+        <p>Sometimes, including after a rebase, you need to reset your working tree. You can reset to a particular commit, and <strong>delete all changes</strong>, with the following command.</p>
+        <code>$ git reset --hard <mark>1fc6665</mark></code>
+        <p>To force push your last known non-conflicting commit to the origin repository, you’ll need to use <code>--force</code>.</p>
+        <code>git push --force origin master</code>
+        <p>To remove local untracked files and subdirectories from the Git directory for a clean working branch, you can use <code>git clean</code>.</p>
+        <code>$ git clean -f -d</code>
+        <p>If you need to modify your local repository so that it looks like the current upstream master (that is, there are too many conflicts), you can perform a hard reset.</p>
+        <code>$ git reset --hard upstream/master</code>
+      </article>
+    </section>
+
+    <section class="main-section" id="conclusion">
+      <header>Conclusion</header>
+      <article>
+        <p>There are many more commands and variations that you may find useful as part of your work with Git. To learn more about all of your available options, you can run:</p>
+        <code>$ git --help</code>
+        <p>To get advanced knowledge over Git commands you can visit the <a href="https://git-scm.com">official Git page for more information and you can also download a <a href="https://git-scm.com/doc">free e-book</a> from Git Official Site.</a></p>
+      </article>
+    </section>
+
+    <section class="main-section" id="referance">
+      <header>Referance</header>
+      <article>
+      <ul>
+        <li>This Git Quick Referance Guide is prepared by <a href="https://lisatagliaferri.org">Lisa Tagliaferri</a>.</li>
+        <li>Have a look at her amazing work <a href="https://www.digitalocean.com/community/cheatsheets/how-to-use-git-a-reference-guide">here</a>.</li>
+        <li>This Technical Documentation Page is made for FreeCodeCamp.</li>
+        <li>You can check my <a href="https://github.com/amankr1619">Github</a> for more amazing work.</li>
+      </ul>
+    </article>
+    </section>
+  </main>
+
+</body>
