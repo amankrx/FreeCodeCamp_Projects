@@ -1,12 +1,17 @@
-
-
-  #main{
+ *{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+  }
+#main{
     align-self: center;
     background-color: #D3D3D3;
   }
 
   #title{
     text-align: center;
+    padding: 10px;
+    color: red;
   }
 
   #img-div{
@@ -20,17 +25,29 @@
     display: block;
     margin-left: auto;
     margin-right: auto;
+    border-radius: 10px;
   }
 
   #img-caption{
-    font-size: 10px;
+    font-size: 15px;
     font-family: sans-serif;
+    text-align: center;
+    padding: 10px;
+    font-weight: 600;
+    
   }
 
   #tribute-info{
     font-size: 20px;
     font-family: monospace;
   }
+.para{
+  padding: 30px 100px 0px 100px;
+  text-align: justify;
+}
+footer{
+  padding: 30px 100px 40px 100px;
+}
 
   #tribute-link{
     text-decoration: underline;
@@ -39,4 +56,3 @@
   a:hover{
     color: red;
   }
-
